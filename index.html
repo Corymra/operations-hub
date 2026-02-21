@@ -14,6 +14,12 @@ body {
   background: #050505;
   color: #ffffff;
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 .container {
@@ -23,6 +29,17 @@ body {
 .logo {
   width: 90px;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: logoIn 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes logoIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 h1 {
@@ -31,6 +48,13 @@ h1 {
   letter-spacing: 2px;
   color: #39ff14;
   text-shadow: 0 0 10px #39ff14;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 8px #39ff14; }
+  50% { text-shadow: 0 0 16px #39ff14; }
+  100% { text-shadow: 0 0 8px #39ff14; }
 }
 
 .sub {
@@ -51,12 +75,13 @@ h1 {
   color: #ffffff;
   font-size: 18px;
   border: 1px solid #222;
-  transition: 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .button:hover {
   border-color: #b026ff;
   box-shadow: 0 0 12px #b026ff;
+  transform: translateY(-3px);
 }
 
 .button:active {
